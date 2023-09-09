@@ -30,7 +30,7 @@ const UploadForm  = (props: { photoupdate: any; }) : JSX.Element => {
     }
   };
   
-  const ref = useRef<HTMLInputElement>();
+  const ref:any = useRef();
   const fetchPhotos = async () => {
     const data = await axios.get("/getPhoto");
     if (data) {
@@ -54,7 +54,7 @@ const UploadForm  = (props: { photoupdate: any; }) : JSX.Element => {
       console.log(comment);
       formData.append("comment", comment);
       const config = {
-        onUploadProgress: (progressEvent: { loaded: any; total: any }) => {
+        onUploadProgress: (progressEvent: any) => {
           console.log(progressEvent.loaded);
           const { loaded, total } = progressEvent;
           const percentage = Math.floor((loaded * 100) / total);
@@ -79,7 +79,7 @@ const UploadForm  = (props: { photoupdate: any; }) : JSX.Element => {
           setComment("");
           setbuttonloading(false);
           setProgress(0);
-          ref.current.value   = "";
+          ref.current.value = "";
           fetchPhotos();
         })
         .catch((err) => {
