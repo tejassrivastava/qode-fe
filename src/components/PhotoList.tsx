@@ -1,6 +1,4 @@
-import { useEffect } from "react";
 import PhotoCard from "./PhotoCard";
-import axios from "../api";
 
 // Defining a component for displaying all the photos and their comments
 const PhotoList = (props: { photos: any; }) :JSX.Element => {
