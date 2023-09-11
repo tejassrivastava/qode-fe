@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'https://qode-be.onrender.com', // Replace with your backend API URL
+  baseURL: 'http://localhost:3000', // Replace with your backend API URL
 });
 
 export default instance;
